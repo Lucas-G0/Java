@@ -21,13 +21,15 @@ public class Main {
 
         System.out.println("Insert values: \n");
         values.setValues(new int[]{sc.nextInt(), sc.nextInt(), sc.nextInt(), sc.nextInt()});
+        System.out.println("\n");
 
         values.setValuesSum(values.calcValuesSum());
-//        values.setValuesMult(values.calcValuesMult());
+        values.setValuesMult(values.calcValuesMult());
 
-        for (int i=0; i<5; i++){
-            System.out.println("Sum: " + values.getValuesSum(i) + "\t");
-//            System.out.println("Mult: " + values.getValuesMult(i) + "\t");
+        for (int i=0; i<6; i++){
+            System.out.println("Sum: " + values.getValuesSum()[i] + "\t");
+            System.out.println("Mult: " + values.getValuesMult()[i] + "\t");
+            System.out.println("\n");
         }
     }
 }

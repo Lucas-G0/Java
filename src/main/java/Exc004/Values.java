@@ -21,28 +21,39 @@ public class Values {
         return values;
    }
 
-    public int getValuesSum(int i) {
-        return valuesSum[i];
+    public int[] getValuesSum() {
+        return valuesSum;
     }
 
-    public int getValuesMult(int i) {
-        return valuesMult[i];
+    public int[] getValuesMult() {
+        return valuesMult;
     }
 
     public int[] calcValuesSum(){
-        int[] sum = new int[values.length];
+        int[] sum = new int[6];
+        int cont = 0;
 
         for (int i = 0; i < values.length; i++) {
-            sum[i] = values[i] + values[values.length - i];
+            for (int j = i+1; j < values.length; j++){
+                sum[cont] = values[i] + values[j];
+                cont++;
+            }
         }
 
         return sum;
     }
 
-//    public int[] calcValuesMult(){
-//        int[] valuesMult = new int[]{this.value1 * this.value2, this.value1 * this.value3,
-//                this.value1 * this.value4, this.value2 * this.value3,
-//                this.value2 * this.value4, this.value3 * this.value4};
-//        return valuesMult;
-//    }
+    public int[] calcValuesMult(){
+        int[] mult = new int[6];
+        int cont = 0;
+
+        for (int i =0; i< values.length; i++){
+            for (int j = i+1; j < values.length; j++){
+                mult[cont] = values[i] * values[j];
+                cont++;
+            }
+        }
+
+        return mult;
+    }
 }
